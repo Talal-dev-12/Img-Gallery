@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    text-align: center;
+}
+body{
+    background-color: rgb(206, 206, 206);
+}
+.header{
+    background-color:white;
+    height:50px;
+    text-align: center;
+    box-shadow: 5px 5px 5px gray;
+    width: 70%;
+    margin-left: 20%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20%;
+    border-radius: 10px;
+}
+p{
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    position: relative;
+}
+p::before{
+    content: '';
+    position: absolute;
+   
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(244, 0, 0, 0.796);
+    bottom: -10px;
+    height: 3px;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        width: 50px;
+    }
+    50%{
+        width: 200px;
+    }
+    100%{
+        width: 50px;
+    }
+}
+.img{
+    display:grid;
+    width: 80%;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    gap: 15px;
+    margin-left: 15% ; 
+    border-radius: 5px;
+    margin-bottom: 10px;
+ 
+}
+.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 5px 5px 5px rgb(104, 102, 102);
+    
+}
+.img:hover img {
+    filter: blur(2px);
+  }
+.img img:hover{
+-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+transition: 1s ease;
+box-shadow: 7px 7px 7px rgb(14, 14, 14);
+filter: blur(0);
+z-index: 1;
+border-radius: 10px;
+}
+.fullimg{
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+   z-index: 2;
+}
+.fullimg img{
+    width: 90%;
+    max-width: 30%;
+}
+.fullimg span{
+    position: absolute;
+    top:3%;
+    z-index: 1;
+    color: white;
+    font-size: 30px;
+    border: 1px solid rgb(245, 236, 236);
+    width: 32px;
+    right: 3%;
+    cursor: pointer;
+}
